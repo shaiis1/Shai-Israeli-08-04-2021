@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --prod",
     "deploy": "gh-pages -d dist"
   },
   "private": true,
@@ -30,6 +31,7 @@
     "express": "^4.17.1",
     "gh-pages": "^2.2.0",
     "ngx-toastr": "^11.3.3",
+    "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.14.1",
     "zone.js": "~0.9.1"
