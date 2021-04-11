@@ -1,0 +1,8 @@
+<div class="card-body text-center">
+  <h6 class="card-text">{{favoritesDailyWeather.fetchedCityName}}</h6>
+  <img src="https://developer.accuweather.com/sites/default/files/{{favoritesDailyWeather.weatherIcon}}-s.png">
+  <h6 class="card-text">{{favoritesDailyWeather.dailyTemperature}} C°</h6>
+  <h6 class="card-text">{{favoritesDailyWeather.weatherText}}</h6>
+  <button type="button" class="btn btn-info" (click)="navigateToHome()">Watch {{favoritesDailyWeather.fetchedCityName}}
+    weather</button>
+</div>

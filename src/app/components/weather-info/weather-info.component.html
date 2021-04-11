@@ -1,0 +1,40 @@
+<ng-container *ngIf="!isDailyLoading; else showDailyLoading">
+  <div class="row">
+    <div class="mx-auto">
+      <div class="card" @fade>
+        <div class="card-body text-center" style="min-width: 183px">
+          <img src="https://developer.accuweather.com/sites/default/files/{{weatherIcon}}-s.png">
+          <h5 class="card-title">{{fetchedCityName}}</h5>
+          <h6 class="card-text">{{dailyTemperature}} C°</h6>
+          <h6>{{weatherText}}</h6>
+        </div>
+      </div>
+      <button @fade *ngIf="!isInFavorites; else showRemoveFromFavorites" type="button"
+        class="btn btn-info mt-5 mb-5 btn-block favorites-btn" (click)="AddToFavorites()">Add to favorites</button>
+      <ng-template #showRemoveFromFavorites>
+        <button @fade type="button" class="btn btn-danger mt-5 mb-5 btn-block" (click)="removeFromFavorites()">Remove
+          from favorites</button></ng-template>
+    </div>
+  </div>
+</ng-container>
+<ng-template #showDailyLoading>
+  <div class="row mb-5">
+    <div class="mx-auto">
+      <span class="sr-only">Loading...</span>
+      <div class="spinner-border text-info" role="status"></div>
+    </div>
+  </div>
+</ng-template>
+<div class="card-deck" *ngIf="!isForecastLoading; else showForecastLoading">
+  <app-weather-info-card @fade class="card" *ngFor="let weatherItem of currentWeatherForecast; index as i"
+    [currentWeatherForecast]="currentWeatherForecast[i]">
+  </app-weather-info-card>
+</div>
+<ng-template #showForecastLoading>
+  <div class="row">
+    <div class="mx-auto">
+      <span class="sr-only">Loading...</span>
+      <div class="spinner-border text-info" role="status"></div>
+    </div>
+  </div>
+</ng-template>

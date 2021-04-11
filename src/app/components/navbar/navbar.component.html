@@ -1,0 +1,10 @@
+<mat-sidenav-container [ngClass]="{'dark-theme-mode': isDarkTheme, 'light-theme-mode': !isDarkTheme}">
+<mat-toolbar color="primary" class="navbar">
+  <mat-slide-toggle [(ngModel)]="isDarkTheme">Dark Theme</mat-slide-toggle>
+  <div>Weather App</div>
+  <div>
+    <span routerLink="/">Home</span>
+    <span routerLink="/favorites">Favorites</span>
+  </div>
+</mat-toolbar>
+</mat-sidenav-container>

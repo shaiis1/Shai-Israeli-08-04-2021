@@ -1,0 +1,15 @@
+.mat-sidenav-container, .mat-sidenav-content, .mat-sidenav {
+    height: 5%;
+}
+.mat-sidenav {
+    width: 250px;
+}
+
+.navbar{
+    justify-content: space-between;
+    height: 100%;
+}
+
+span{
+    padding-right: 1rem;
+}
